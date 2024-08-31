@@ -4,10 +4,10 @@ public class HW2 {
 	public static void main(String[] args) {
 		// • 請設計一隻Java程式，計算1～1000的偶數和(2+4+6+8+…+1000)
 		System.out.println("第1題");
-		int i;
+		int q;
 		int sum = 0;
-		for (i = 0; i <= 1000; i += 2) {
-			sum += i;
+		for (q = 0; q <= 1000; q += 2) {
+			sum += q;
 		}
 		System.out.println(sum);
 
@@ -38,20 +38,20 @@ public class HW2 {
 			System.out.printf("%d ", z * z);
 			z++;
 		}
+		System.out.println("");
 
 		// • 阿文很熱衷大樂透(1 ～ 49)，但他不喜歡有4的數字，不論是個位數或是十位數。請設計一隻程式，
 		// 輸出結果為阿文可以選擇的數字有哪些？總共有幾個？
 		System.out.println("第5題");
-		int s = 0;
-		outer: while (s <= 39) {
-			if (s % 10 == 4) {
-				s++;
-				continue outer;
-			}
-			System.out.println(s);
-			s++;
+		int count = 0;
+		for (int i = 1; i <= 49; i++) {
+		    if (i % 10 != 4 && i / 10 != 4) {
+		        System.out.print(i + " ");
+		        count++;
+		    }
 		}
-
+		System.out.println("\n總共有 " + count + " 個數字");
+		
 		// • 請設計一隻Java程式，輸出結果為以下：
 		// 1 2 3 4 5 6 7 8 9 10
 		// 1 2 3 4 5 6 7 8 9
@@ -121,7 +121,7 @@ public class HW2 {
 				System.out.printf("%d * %d = %d	", E, F, E * F);
 				F++;
 			} while (F <= 9);
-		System.out.println();
+			System.out.println();
 		}
 
 		// 第2題 while + do while
@@ -133,8 +133,8 @@ public class HW2 {
 				System.out.printf("%d * %d = %d	", G, H, G * H);
 				H++;
 			} while (H <= 9);
-		System.out.println();
-		G++;
+			System.out.println();
+			G++;
 		}
 
 	}
