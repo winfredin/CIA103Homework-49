@@ -1,5 +1,7 @@
 package Hw4;
 
+import java.util.Scanner;
+
 public class Hw4 {
 
 		public static void main(String[] args) {
@@ -110,64 +112,64 @@ public class Hw4 {
 
 //			5.請設計由鍵盤輸入三個整數，分別代表西元yyyy年，mm月，dd日，執行後會顯示是該年的第幾天	
 //			例：輸入1984 9 8 三個號碼後，程式會顯示「輸入的日期為該年第252天」
-//			Scanner datesc = new Scanner(System.in);
-//			System.out.print("輸入日期:");
-//			int dateYear = datesc.nextInt();
-//			int dateMonth = datesc.nextInt();
-//			int dateDay = datesc.nextInt();
-//			
-//			int[] countdate1 = {31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365};
-//			int[] countdate2 = {31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366};
-//			if(dateYear % 4 != 0 && dateMonth == 2 && dateDay > 28) {
-//				System.out.print("月份輸入為2，則日期不該超過29");
-//			}else if(dateYear % 4 == 0){
-//				System.out.print("輸入的日期為該年第" + (countdate2[(dateMonth-2)] + dateDay) + "天");
-//			}else {
-//				System.out.print("輸入的日期為該年第" + (countdate1[(dateMonth-2)] + dateDay) + "天");
-//			}
+			Scanner datesc = new Scanner(System.in);
+			System.out.print("輸入日期:");
+			int dateYear = datesc.nextInt();
+			int dateMonth = datesc.nextInt();
+			int dateDay = datesc.nextInt();
+			
+			int[] countdate1 = {31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365};
+			int[] countdate2 = {31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366};
+			if(dateYear % 4 != 0 && dateMonth == 2 && dateDay > 28) {
+				System.out.print("月份輸入為2，則日期不該超過29");
+			}else if(dateYear % 4 == 0){
+				System.out.print("輸入的日期為該年第" + (countdate2[(dateMonth-2)] + dateDay) + "天");
+			}else {
+				System.out.print("輸入的日期為該年第" + (countdate1[(dateMonth-2)] + dateDay) + "天");
+			}
 			
 //			6.班上有8位同學，他們進行了6次考試結果如下：請算出每位同學考最高分的次數
-			int[][] test = {
-				    {10,35,40,100,90,85,75,70},
-				    {37,75,77,89,64,75,70,95},
-				    {100,70,79,90,75,70,79,90},
-				    {77,95,70,89,60,75,85,89},
-				    {98,70,89,90,75,90,89,90},
-				    {90,80,100,75,50,20,99,75},
-				};
-
-				int[] highestScoreCount = new int[8];  // 用於存儲每個學生獲得最高分的次數
-
-				for (int exam = 0; exam < test.length; exam++) {
-				    int maxScore = 0;  // 假設分數不會是負數
-				    int[] topStudents = new int[8];  // 用於存儲本次考試獲得最高分的學生
-				    int topStudentCount = 0;  // 用於記錄獲得最高分的學生數量
-
-				    // 找出本次考試的最高分
-				    for (int score : test[exam]) {
-				        if (score > maxScore) {
-				            maxScore = score;
-				        }
-				    }
-
-				    // 找出所有獲得最高分的學生
-				    for (int student = 0; student < test[exam].length; student++) {
-				        if (test[exam][student] == maxScore) {
-				            topStudents[topStudentCount] = student;
-				            topStudentCount++;
-				        }
-				    }
-
-				    // 為獲得最高分的學生增加計數
-				    for (int i = 0; i < topStudentCount; i++) {
-				        highestScoreCount[topStudents[i]]++;
-				    }
-				}
-
-				// 輸出結果
-				for (int i = 0; i < highestScoreCount.length; i++) {
-				    System.out.println("學生 " + (i + 1) + " 獲得最高分的次數: " + highestScoreCount[i]);
-				}
+//			int[][] test = {
+//				    {10,35,40,100,90,85,75,70},
+//				    {37,75,77,89,64,75,70,95},
+//				    {100,70,79,90,75,70,79,90},
+//				    {77,95,70,89,60,75,85,89},
+//				    {98,70,89,90,75,90,89,90},
+//				    {90,80,100,75,50,20,99,75},
+//				};
+//
+//				int[] highestScoreCount = new int[8];  // 用於存儲每個學生獲得最高分的次數
+//
+//				for (int exam = 0; exam < test.length; exam++) {
+//				    int maxScore = 0;  // 假設分數不會是負數
+//				    int[] topStudents = new int[8];  // 用於存儲本次考試獲得最高分的學生
+//				    int topStudentCount = 0;  // 用於記錄獲得最高分的學生數量
+//
+//				    // 找出本次考試的最高分
+//				    for (int score : test[exam]) {
+//				        if (score > maxScore) {
+//				            maxScore = score;
+//				        }
+//				    }
+//
+//				    // 找出所有獲得最高分的學生
+//				    for (int student = 0; student < test[exam].length; student++) {
+//				        if (test[exam][student] == maxScore) {
+//				            topStudents[topStudentCount] = student;
+//				            topStudentCount++;
+//				        }
+//				    }
+//
+//				    // 為獲得最高分的學生增加計數
+//				    for (int i = 0; i < topStudentCount; i++) {
+//				        highestScoreCount[topStudents[i]]++;
+//				    }
+//				}
+//
+//				// 輸出結果
+//				for (int i = 0; i < highestScoreCount.length; i++) {
+//				    System.out.println("學生 " + (i + 1) + " 獲得最高分的次數: " + highestScoreCount[i]);
+//				}
 			
 //			int[][] test = {
 //					{10,35,40,100,90,85,75,70},
